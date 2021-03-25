@@ -73,7 +73,12 @@ $sudo service rpi_temp status
 
 ## check_rpitemp
 
-This is the Nagios check which runs via check
+This is the Nagios check which runs via check_by_ssh plugin.  This allows the use ssh public keys to authenticate with a target device before running any commands.
+
+On the Raspberry pi device, create a new UNIX user "nagios" and generate the corresponding ssh public keys.  Configure password-less ssh public key authentication
+under nagios userid on both the Nagios server and the Raspberry pi.  Test and ensure password-less authentication works both ways.
+
+
 
 
 

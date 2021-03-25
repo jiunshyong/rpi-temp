@@ -6,7 +6,7 @@ Implementation: a SysV init script (rpi_temp.sh) daemonizes the main Python3 scr
 ## Hardware Design & Configuration
 The hardware components are a breadboard, 40-pin GPIO breakout board for Raspberry Pi, a DS18B20 digital temperature sensor, a 0.10mF capacitor, and jumper wires.
 
-Three options of jumper wire connectivity between Raspbery pi and DS18B20 could be implemented: 
+Three options of jumper wire connectivity between Raspberry pi and DS18B20 could be implemented: 
 1. Pi Cobbler+ 40-pin GPIO breakout board.  
 2. T-Cobber Plus 40-pin GPIO breakout board.  
 3. Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO.

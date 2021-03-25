@@ -34,8 +34,9 @@ Save file and then shut down the Raspberry Pi before wiring the sensor.
 
 When modprobe to loads these modules, the Raspberry Pi enables data collection on pin GPIO 4 and reads data from the sensor and stores it in a file. The file is named starting with 28 and followed by a unique file name.  The file contains the raw data read from the sensor.
 
-`pi@raspberrypi:/sys/bus/w1/devices/28-1a1960a65dff $ cat ­w1_slave`
+`pi@raspberrypi:/sys/bus/w1/devices/28-1a1960a65dff $ cat w1_slave`
 `3e 01 55 00 7f ff 0c 10 8d : crc=8d YES`
+
 `3e 01 55 00 7f ff 0c 10 8d t=19365`
 
 

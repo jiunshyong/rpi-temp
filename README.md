@@ -109,7 +109,10 @@ Validate the configuration and restart the Nagios Core server:
 #/etc/init.d/nagios restart
 ```
 
+## Housekeeping cronjob 
+Enable an housekeeping cronjob for /tmp/temp.out which zerorises the file on every hour.
 
+`0 * * * *  /usr/bin/cat /dev/null > /tmp/temp.out`
 
 
 

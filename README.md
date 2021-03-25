@@ -13,6 +13,14 @@ Three options of jumper wire connectivity between Raspberry pi and DS18B20 could
 
 Note: direct jumper wire connectivity is the lowest cost. Fritzing is used for breadboard diagram design.
 
+Insert the breakout board into the breadboard, aligning pin 1 (3.3V) to position 1 on the breadboard
+
+Install the temperature sensor to the right of the breakout board with pin 1 to the left. If one holds the sensor with the flat side is facing oneself, pin 1 is on the left of the flat side of the sensor. Connect the 0.10mF capacitor between pin 3 (right) and pin 1 (left) with jumpers.
+
+Connect power from the breakout board to the power rail of the breadboard and ground from the breakout board to the ground rail of the breadboard
+
+Next connect power to pin 3 of the sensor and ground to pin 1. Finally, connect pin 2 of the sensor to GPIO 4. As DS18B20 is a digital sensor, it uses the one-wire facility.
+
 **Option 1: Pi Cobbler+ 40-pin GPIO breakout board**
 ![rpi_temp_bb](https://user-images.githubusercontent.com/2264686/112409280-30c63f00-8d54-11eb-90dc-f979dd050f34.png)
 

@@ -30,7 +30,7 @@ Next connect power to pin 3 of the sensor and ground to pin 1. Finally, connect 
 **Option 3: Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO**  
 ![rpi_temp2_bb](https://user-images.githubusercontent.com/2264686/112410555-53f1ee00-8d56-11eb-9682-efa815be211a.png)
 
-## Hardware Testing
+
 ### Enabling required Linux kernel modules
 The Linux kernel modules required to load are w1-gpio and w1-therm. The w1-gpio module registers and loads the new sensor connected to pin GPIO 4. The w1-therm module registers and loads a module that has support for temperature sensors.
 

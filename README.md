@@ -7,6 +7,12 @@ Current implementation: a SysV init script (rpi_temp.sh) daemonizes the main Pyt
 The hardware components are a breadboard, GPIO Breakout Board for Raspberry Pi, a DS18B20 digital temperature sensor, a 0.10mF capacitor, and jumper wires.
 
 
+![rpi_temp_bb](https://user-images.githubusercontent.com/2264686/112409280-30c63f00-8d54-11eb-90dc-f979dd050f34.png)
+
+![rpi_temp1_bb](https://user-images.githubusercontent.com/2264686/112409331-463b6900-8d54-11eb-8bbd-3974f30f13d4.png)
+
+![rpi_temp_bb](https://user-images.githubusercontent.com/2264686/112409337-489dc300-8d54-11eb-98fe-e17295b4a5b5.png)
+
 
 
 

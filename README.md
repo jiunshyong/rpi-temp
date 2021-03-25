@@ -122,14 +122,5 @@ Enable an housekeeping cronjob for /tmp/temp.out which zerorises the file on eve
 
 `0 * * * *  /usr/bin/cat /dev/null > /tmp/temp.out`
 
-
-
-
-
-
-
-
-
-
-
-
+## To clone
+`git clone https://github.com/jiunshyong/rpi-temp`

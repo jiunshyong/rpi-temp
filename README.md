@@ -24,7 +24,7 @@ Note: direct jumper wire connectivity is the lowest cost. Fritzing is used for b
 
 ## Hardware Testing
 ### Enabling required Linux kernel modules
-The Linux kernel modules to load are named w1-gpio and w1-therm. The w1-gpio module registers and loads the new sensor connected to pin GPIO 4. The w1-therm module registers and loads a module that has support for temperature sensors.
+The Linux kernel modules required to load are w1-gpio and w1-therm. The w1-gpio module registers and loads the new sensor connected to pin GPIO 4. The w1-therm module registers and loads a module that has support for temperature sensors.
 
 To use the modules, enable them by adding the following line to /boot/config.txt with vim before rebooting your Pi.  Note this enables PIN4 as the default. Different pin could be used by adding the option gpiopin=N to the line.
 

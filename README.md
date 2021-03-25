@@ -48,13 +48,34 @@ pi@raspberrypi:/sys/bus/w1/devices/28-1a1970a57dff $ cat w1_slave
 This is the main script to 
 - load the required Linux kernel modules (w1-gpio, w1-therm) which enable temperature data collection on pin GPIO 4, reading of raw data from the sensor and outputting the raw data to a system file (/sys/bus/w1/devices/28-1a1970a57dff);
 - parses the raw data file and converts to degree Celsius temperature numerical integer value;
-- outputs the temperature value with time stamp every 60s to a file (/tmp/temp.out) 
+- outputs the temperature value with time stamp every 60s to a file (/tmp/temp.out) ;
+- cleans up the GPIO pins when device is powered down
 
 This file should to be placed in /home/pi/scripts/rpi_temp.py
 
 ## rpi_temp.sh
 
 This is the SysV init script which daemonizes the main Python3 script (rpi_temp.py) everytime Raspberry pi boots up.  It shutdowns the main script when the device is powered down.
+
+Installation:
+```
+$ sudo cp /home/pi/scripts/rpi_temp.sh /etc/init.d/rpi_temp
+$ sudo chmod +x /etc/init.d/rpi_temp
+$ sudo update-rc.d rpi_temp defaults
+```
+
+Usage:
+```
+$sudo service rpi_temp start
+$sudo service rpi_temp stop
+$sudo service rpi_temp status
+```
+
+## check_rpitemp
+
+This is the Nagios check which runs via check
+
+
 
 
 

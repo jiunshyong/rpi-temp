@@ -1,12 +1,15 @@
-# rpi-temp
+## rpi-temp
 rpi-temp is a Raspberry-pi temperature sensor node with DS18B20 digital temperature sensor which uses Nagios check to monitor server rack ambient temperature. It is based on Rasbian OS and Raspberry pi 2B platform.
 
 Implementation: a SysV init script (rpi_temp.sh) daemonizes the main Python3 script (rpi_temp.py) for ambient temperature data collection.  A remote Nagios check (check_rpitemp) will query the data collection file on a fixed interval and display the current temperature reading plus corresponding alert on the remote Nagios server dashboard. Alert types are OK, WARNING, CRITICAL which are based on temperature readings.
 
-# Hardware Design & Configuration
+## Hardware Design & Configuration
 The hardware components are a breadboard, 40-pin GPIO breakout board for Raspberry Pi, a DS18B20 digital temperature sensor, a 0.10mF capacitor, and jumper wires.
 
-Three options of jumper wire connectivity could be used: 1.Pi Cobbler+ 40-pin GPIO breakout board.  2.T-Cobber Plus 40-pin GPIO breakout board.  3.Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO.
+Three options of jumper wire connectivity could be used: 
+1. Pi Cobbler+ 40-pin GPIO breakout board.  
+2. T-Cobber Plus 40-pin GPIO breakout board.  
+3. Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO.
 Note: direct jumper wire connectivity is the lowest cost. Fritzing is used for breadboard diagram design.
 
 **Option 1: Pi Cobbler+ 40-pin GPIO breakout board**
@@ -18,7 +21,7 @@ Note: direct jumper wire connectivity is the lowest cost. Fritzing is used for b
 **Option 3: Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO**  
 ![rpi_temp2_bb](https://user-images.githubusercontent.com/2264686/112410555-53f1ee00-8d56-11eb-9682-efa815be211a.png)
 
-# Enabling required kernel modules
+## Enabling required Linux kernel modules
 The Linux kernel modules to load are named w1-gpio and w1-therm. The w1-gpio module registers and loads the new sensor connected to pin GPIO 4. The w1-therm module registers and loads a module that has support for temperature sensors.
 
 To use the modules, enable them by adding the following line to /boot/config.txt with vim before rebooting your Pi.  Note this enables PIN4 as the default. Different pin could be used by adding the option gpiopin=N to the line.

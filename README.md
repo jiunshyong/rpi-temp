@@ -10,6 +10,7 @@ Three options of jumper wire connectivity could be used:
 1. Pi Cobbler+ 40-pin GPIO breakout board.  
 2. T-Cobber Plus 40-pin GPIO breakout board.  
 3. Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO.
+
 Note: direct jumper wire connectivity is the lowest cost. Fritzing is used for breadboard diagram design.
 
 **Option 1: Pi Cobbler+ 40-pin GPIO breakout board**

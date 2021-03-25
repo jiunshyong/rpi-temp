@@ -43,7 +43,8 @@ pi@raspberrypi:/sys/bus/w1/devices/28-1a1970a57dff $ cat w1_slave
 3e 01 55 00 5f ff 0c 10 8b : crc=8d YES
 3e 01 55 00 5f ff 0c 10 8b t=19365
 ```
-##rpi_temp.py
+## rpi_temp.py
+
 This is the main script to 
 - load the required Linux kernel modules (w1-gpio, w1-therm) which enable temperature data collection on pin GPIO 4, reading of raw data from the sensor and outputting the raw data to a system file (/sys/bus/w1/devices/28-1a1970a57dff);
 - parses the raw data file and converts to degree Celsius temperature numerical integer value;

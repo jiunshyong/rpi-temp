@@ -50,6 +50,12 @@ This is the main script to
 - parses the raw data file and converts to degree Celsius temperature numerical integer value;
 - outputs the temperature value with time stamp every 60s to a file (/tmp/temp.out) 
 
+This file should to be placed in /home/pi/scripts/rpi_temp.py
+
+## rpi_temp.sh
+
+This is the SysV init script which daemonizes the main Python3 script (rpi_temp.py) everytime Raspberry pi boots up.  It shutdowns the main script when the device is powered down.
+
 
 
 

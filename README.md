@@ -18,7 +18,14 @@ Note: direct jumper wire connectivity is the lowest cost. Fritzing is used for b
 **Breadboard diagram: Direct jumper wire connectivity between breadboard and Raspberry Pi GPIO**  
 ![rpi_temp2_bb](https://user-images.githubusercontent.com/2264686/112410555-53f1ee00-8d56-11eb-9682-efa815be211a.png)
 
+# Enabling required kernel modules
+The Linux kernel modules to load are named w1-gpio and w1-therm. The w1-gpio module registers and loads the new sensor connected to pin GPIO 4. The w1-therm module registers and loads a module that has support for temperature sensors.
 
+To use the modules, enable them by adding the following line to /boot/config.txt with vim before rebooting your Pi.  Note this enables PIN4 as the default. Different pin could be used by adding the option gpiopin=N to the line.
+
+dtoverlay=w1-gpio
+
+Save file and then shut down the Raspberry Pi before wiring the sensor.
 
 
 

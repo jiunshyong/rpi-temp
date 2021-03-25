@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+# Nagios check for rpi temperature sensor node via check_by_ssh
+unset rpitemp
+declare -i rpitemp
+
+rpitemp=$(/usr/bin/awk 'END{print}' /tmp/temp.out | /usr/bin/awk '{print $3}')
+
+if (("$rpitemp" <= 25)); then
+		echo "OK - Ambient temperature is $rpitemp"
+		exit 0
+	elif (("$rpitemp" >= 26)) && (("$rpitemp" <= 33)); then
+		echo "WARNING - Ambient temperature is $rpitemp"
+		exit 1
+	elif (("$rpitemp" >= 34)); then
+		echo "CRITICAL - Ambient temprature is $rpitemp"
+		exit 2	
+	else
+		echo "UNKNOWN - Value received: $rpitemp"
+		exit 3
+fi

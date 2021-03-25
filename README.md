@@ -78,6 +78,38 @@ This is the Nagios check which runs via check_by_ssh plugin.  This allows the us
 On the Raspberry pi device, create a new UNIX user "nagios" and generate the corresponding ssh public keys.  Configure password-less ssh public key authentication
 under nagios userid on both the Nagios server and the Raspberry pi.  Test and ensure password-less authentication works both ways.
 
+On the Nagios server, check by running the check_by_ssh plugin to call one of the installed plugins on the Raspberry pi device.
+```
+$ /usr/local/nagios/libexec/check_by_ssh -H 192.168.1.100 -i /usr/local/nagios/keys/id_rsa  -C '/usr/local/nagios/libexec/check_load -w 15,10,5 -c 30,24,20'
+OK - load average: 0.00, 0.00, 0.00|load1=0.000;15.000;30.000;0;
+load5=0.000;10.000;24.000;0; load15=0.000;5.000;20.000;0;
+```
+
+Once check_by_ssh works, define the new command check_rpitemp to use it in /usr/local/nagios/etc/objects/commands.cfg:
+```
+define command {
+    command_name  check_rpitemp
+    command_line  /usr/local/nagios/libexec/check_by_ssh -H $HOSTADDRESS$ -i /usr/local/nagios/keys/id_rsa -C '/usr/local/nagios/libexec/check_rpitemp'
+}
+```
+
+Apply that command to a new service check as follows, preferably placed beneath the host definition:
+```
+define service {
+    use                  generic-service
+    host_name            192.168.1.100
+    service_description  RPITEMP_BY_SSH
+    check_command        check_by_ssh!/usr/local/nagios/libexec/check_rpitemp 
+}
+```
+
+Validate the configuration and restart the Nagios Core server:
+```
+#/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+#/etc/init.d/nagios restart
+```
+
+
 
 
 

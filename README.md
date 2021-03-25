@@ -37,6 +37,8 @@ When modprobe to loads these modules, the Raspberry Pi enables data collection o
 pi@raspberrypi:~ $ cd /sys/bus/w1/devices/28-1a1970a65dff
 pi@raspberrypi:/sys/bus/w1/devices/28-1a1970a65dff $ ls
 driver  hwmon  id  name  power  subsystem  uevent  w1_slave`
+```
+```
 pi@raspberrypi:/sys/bus/w1/devices/28-1a1960a65dff $ cat w1_slave`
 3e 01 55 00 7f ff 0c 10 8d : crc=8d YES`
 3e 01 55 00 7f ff 0c 10 8d t=19365`
